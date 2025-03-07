@@ -1,6 +1,6 @@
 import os
-import openai
-import backoff 
+# import openai
+# import backoff 
 
 completion_tokens = prompt_tokens = 0
 
