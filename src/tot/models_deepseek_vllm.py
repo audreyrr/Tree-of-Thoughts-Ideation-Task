@@ -1,6 +1,6 @@
 from vllm import LLM, SamplingParams
 import os
-cache_dir = "/mnt/cache_volume/hf_cache/huggingface/hub"
+cache_dir = "/mnt/cache_volume/hf_cache/hub"
 os.environ["HF_HOME"] = cache_dir
 
 # return a 2d list
