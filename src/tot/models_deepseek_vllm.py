@@ -1,7 +1,5 @@
 from vllm import LLM, SamplingParams
 import os
-cache_dir = "/mnt/cache_volume/hf_cache/models"
-os.environ["HF_HOME"] = cache_dir
 
 # return a 2d list
 def deepseek(eval_prompt_list, model='deepseek-ai/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1):
