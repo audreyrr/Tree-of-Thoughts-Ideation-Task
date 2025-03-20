@@ -9,6 +9,7 @@ ARG DEBIAN_FRONTEND="noninteractive"
 # Environment setup
 ENV NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute
 ENV HF_HOME=/mnt/cache_volume/hf_cache
+ENV TRANSFORMERS_CACHE=/mnt/cache_volume/hf_cache
 ENV CONDA_PKGS_DIRS=/conda_pkgs
 ENV PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:$PATH
 ENV CUDA_HOME=/usr/local/cuda
