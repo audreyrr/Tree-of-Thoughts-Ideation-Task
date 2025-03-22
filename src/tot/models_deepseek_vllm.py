@@ -2,7 +2,7 @@ from vllm import LLM, SamplingParams
 import os
 
 # return a 2d list
-def deepseek(eval_prompt_list, model='deepseek-ai/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1):
+def deepseek(eval_prompt_list, model='/mnt/cache_volume/hf_cache/models/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1):
     # Create a sampling params object.
     sampling_params = SamplingParams(temperature=temperature,max_tokens=max_tokens, n=n, seed=8)
     # Create an LLM. Load model weights to GPU.
