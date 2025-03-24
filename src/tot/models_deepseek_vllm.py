@@ -6,7 +6,7 @@ def deepseek(eval_prompt_list, model='/mnt/cache_volume/hf_cache/models/DeepSeek
     # Create a sampling params object.
     sampling_params = SamplingParams(temperature=temperature,max_tokens=max_tokens, n=n, seed=8)
     # Create an LLM. Load model weights to GPU.
-    llm = LLM(model=model, trust_remote_code=True, gpu_memory_utilization=0.9)
+    llm = LLM(model=model, trust_remote_code=True, max_model_len=2048)
     outputs = llm.generate(eval_prompt_list, sampling_params)
     responses = []
     for output in outputs:
