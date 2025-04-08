@@ -2,9 +2,9 @@ import os
 import json
 import argparse
 
-from src.tot.tasks import get_task
-from src.tot.methods.bfs import solve, naive_solve
-from src.tot.models import gpt_usage
+from tot.tasks import get_task
+from tot.methods.bfs import solve, naive_solve
+from tot.models import gpt_usage
 
 def run(args):
     task = get_task(args.task)

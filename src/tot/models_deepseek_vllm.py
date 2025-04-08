@@ -1,10 +1,9 @@
 from vllm import LLM, SamplingParams
-import os
 
 # return a 2d list
-def deepseek(eval_prompt_list, model='/mnt/cache_volume/hf_cache/models/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1):
+def deepseek(eval_prompt_list, model='/stage/hf_cache/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1, seed_value=1):
     # Create a sampling params object.
-    sampling_params = SamplingParams(temperature=temperature,max_tokens=max_tokens, n=n, seed=8)
+    sampling_params = SamplingParams(temperature=temperature,max_tokens=max_tokens, n=n, seed=seed_value)
     # Create an LLM. Load model weights to GPU.
     llm = LLM(model=model, trust_remote_code=True, max_model_len=2048)
     outputs = llm.generate(eval_prompt_list, sampling_params)
@@ -14,60 +13,3 @@ def deepseek(eval_prompt_list, model='/mnt/cache_volume/hf_cache/models/DeepSeek
     return responses  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# from vllm import LLM, SamplingParams
-
-# def deepseek(prompt, model='deepseek-ai/DeepSeek-V2-Lite-Chat', temperature=0.7, max_tokens=512, n=1, stop=None):
-#     # Create an LLM.
-#     # llm = LLM(model=model, quantization= "fp8")
-#     llm = LLM(model=model, trust_remote_code=True,)
-
-#     # Create a sampling params object.
-#     sampling_params = SamplingParams(temperature=temperature, max_tokens=max_tokens, n=n)  
-#     outputs = []
-#     responses = llm.generate([prompt], sampling_params)
-#     # Print the responses.
-#     for response in responses:
-#         prompt = response.prompt
-#         generated_text = response.outputs[0].text
-#         outputs.append(generated_text)
-
-#     return outputs 
